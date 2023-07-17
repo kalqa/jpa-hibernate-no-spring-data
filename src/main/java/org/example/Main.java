@@ -19,6 +19,6 @@ public class Main {
         System.out.println(song.getArtist());
 
         List<Song> all = repository.findAll();
-        System.out.println(all);
+        all.forEach(System.out::println);
     }
 }
