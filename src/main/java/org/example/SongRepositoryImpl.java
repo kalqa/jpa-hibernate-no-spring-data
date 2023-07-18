@@ -26,26 +26,6 @@ public class SongRepositoryImpl implements SongRepository {
         Query query = entityManager.createQuery("Select s From Song s Where id=:id");
         query.setParameter("id", 1L);
         Song song = (Song) query.getSingleResult();
-        return Optional.of(song);
-    }
-
-    @Override
-    public void deleteById(Long id) {
-
-    }
-
-    @Override
-    public void updateById(Long id, Song newSong) {
-
-    }
-
-    @Override
-    public Song save(Song song) {
-        return null;
-    }
-
-    @Override
-    public boolean existsById(Long id) {
-        return false;
+        return Optional.ofNullable(song);
     }
 }
